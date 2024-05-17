@@ -70,9 +70,9 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className="content" style={{ background: "#252525", paddingTop: "50px", height: "105vh" }}> {/* Gray background color and padding top */}
+      <div className="content" style={{ background: "#454545", paddingTop: "50px", height: "105vh" }}> {/* Gray background color and padding top */}
         <div className="container-fluid">
-          <h2 style={{ color: "#FFF" }}>PRODUCTS</h2> {/* Changed text color */}
+          <h2 style={{ color: "#FFF" }}>‎</h2> {/* Changed text color */}
           <Line
             data={lineChartData}
             options={{

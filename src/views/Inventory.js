@@ -127,7 +127,6 @@ function Inventory() {
   return (
     <>
       <PanelHeader size="sm" />
-      <h2 style={{ color: "#FFF" }}>PRODUCTS</h2> {/* Changed text color */}
       <div className="content">
         <Row> 
         <Form>

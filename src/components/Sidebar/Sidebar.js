@@ -5,7 +5,6 @@ import { Nav } from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 
-import logo from "logo_van.png";
 
 var ps;
 
@@ -30,27 +29,7 @@ function Sidebar(props) {
     };
   });
   return (
-    <div className="sidebar" data-color={props.backgroundColor}>
-      {/* <div className="logo">
-        <a
-          href="https://github.com/VanCarlo95"
-          className="simple-text logo-mini"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="logo-img">
-            <img src={logo} alt="react-logo" />
-          </div>
-        </a>
-        <a
-          href="https://github.com/VanCarlo95"
-          className="simple-text logo-normal"
-          target="_blank"
-          rel="noreferrer"
-        >
-          InventoVaticolon
-        </a>
-      </div> */}
+    <div className="sidebar" data-color={props.backgroundColor}>{}
       <div className="sidebar-wrapper" ref={sidebar}>
         <Nav>
           {props.routes.map((prop, key) => {

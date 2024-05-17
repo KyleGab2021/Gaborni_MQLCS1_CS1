@@ -29,44 +29,65 @@ function Login() {
       .catch((err) => console.log(err));
   };
 
+  const clearField = (setter) => {
+    setter("");
+  };
+
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <div className="card">
+          <div className="card" style={{ backgroundColor: "rgba(235, 235, 235, 0.8)" }}>
             <div className="card-header">
-              <h2 className="text-center">Login</h2>
-              <p className="text-center">Welcome back!</p>
+              <h2 className="text-center" style={{ fontWeight: 'bold', color: 'black' }}>LOGIN </h2>
             </div>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                  <label>Username:</label>
+                  <label style={{ fontWeight: 'bold', color: 'black' }}>USERNAME</label>
                   <input
                     className="form-control"
                     type="text"
+                    placeholder="examplejohndoe123"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     required
                   />
+                  <button
+                    type="button"
+                    className="btn btn-link position-absolute"
+                    style={{ bottom: -10, right: 5 }}
+                    onClick={() => clearField(setUsername)}
+                  >
+                    X
+                  </button>
                 </div>
                 <div className="form-group">
-                  <label>Password:</label>
+                  <label style={{ fontWeight: 'bold', color: 'black' }}>PASSWORD</label>
                   <input
                     className="form-control"
                     type="password"
+                    placeholder="password123"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
+                  <button
+                    type="button"
+                    className="btn btn-link position-absolute"
+                    style={{ bottom: -10, right: 5 }}
+                    onClick={() => clearField(setPassword)}
+                  >
+                    X
+                  </button>
                 </div>
                 <div className="text-center">
-                  <button className="btn btn-primary" type="submit">
-                    Login
+                  <button className="btn btn-primary" style={{ fontWeight: 'bold', backgroundColor: 'blue' }} type="submit">
+                    LOGIN
                   </button>
                 </div>
                 <div className="mt-3 text-center">
-                  Don't Have an Account? <Link to="/signup">Sign Up</Link>
+                    <Link to="/signup" style={{ color: 'blue' }}>Sign Up </Link>here.
                 </div>
               </form>
             </div>

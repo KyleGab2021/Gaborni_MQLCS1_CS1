@@ -1,5 +1,13 @@
-Signup.css
-.signup-container {
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+  body {
+      margin: 0;
+      background-color: #333; /* Change to a darker color */
+      background-image: url('../torontoshop.jpg'); /* Replace with the path to your image */
+      font-family: 'Plus Jakarta Sans', sans-serif; /* Apply the imported font */
+  }
+
+  /* .signup-container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -34,12 +42,11 @@ Signup.css
     border-radius: 5px;
   }
   
-  /* Center the container
+  Center the container
   body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-  }
-   */
+  } */
+   
