@@ -82,7 +82,7 @@ function Inventory() {
       id,
       productname,
       quantity,
-      price,
+      price, // Ensure that the price value is set correctly
       sales,
       prodimage,
     });
@@ -99,6 +99,7 @@ function Inventory() {
           id: "",
           productname: "",
           quantity: "",
+          price: "", // Ensure that the price value is cleared after updating
           sales: "",
           prodimage: "",
         });
@@ -106,6 +107,7 @@ function Inventory() {
       })
       .catch((err) => console.log(err));
   };
+  
 
   const handleDeleteProduct = (id) => {
     axios
@@ -133,11 +135,11 @@ function Inventory() {
           <FormGroup>
             <InputGroup className="no-border">
               <Input
-                placeholder="Search..."
+                placeholder="🔍Search..."
                 value={searchTerm}
                 onChange={handleSearch}
                 style={{
-                  backgroundColor: 'rgba(255, 255, 255, 1)', // Change opacity to non-transparent
+                  backgroundColor: 'rgba(255, 255, 255, 0.9)', // Change opacity to non-transparent
                   padding: '20px', // Increase padding
                   fontSize: '16px', // Increase font size
                   height: '40px', // Increase height
@@ -223,12 +225,13 @@ function Inventory() {
           </Row>
         )}
         <div className="text-center">
-          <Button className="btn btn-primary" style={{backgroundColor: 'blue'}}  onClick={toggleAddModal}>
-            Add New Product
+          <Button className="btn btn-primary" style={{fontWeight: 'bold', backgroundColor: 'blue'}}  onClick={toggleAddModal}>
+            ADD PRODUCT
           </Button>
         </div>  
         <Modal isOpen={addModal} toggle={toggleAddModal}>
-          <ModalHeader toggle={toggleAddModal}>Add New Product</ModalHeader>
+        <ModalHeader toggle={toggleAddModal} style={{ textAlign: 'center' }}>Add</ModalHeader>
+          <p className="text-center py-2 mx-3">Please ensure that all fields are filled out accurately to add a new product successfully.</p>
           <ModalBody>
             <Form onSubmit={handleCreateProduct}>
               <FormGroup>
@@ -241,7 +244,7 @@ function Inventory() {
                   onChange={(e) =>
                     setNewProduct({ ...newProduct, productname: e.target.value })
                   }
-                  placeholder="Enter product name"
+                  placeholder="e.g. Acoustic Dog"
                   className="form-control"
                   required
                 />
@@ -256,7 +259,7 @@ function Inventory() {
                   onChange={(e) =>
                     setNewProduct({ ...newProduct, quantity: e.target.value })
                   }
-                  placeholder="Enter quantity"
+                  placeholder="e.g. 50"
                   className="form-control"
                   required
                 />
@@ -271,7 +274,7 @@ function Inventory() {
                   onChange={(e) =>
                     setNewProduct({ ...newProduct, price: e.target.value })
                   }
-                  placeholder="Enter price"
+                  placeholder="e.g. 5000"
                   className="form-control"
                   required
                 />
@@ -286,7 +289,7 @@ function Inventory() {
                   onChange={(e) =>
                     setNewProduct({ ...newProduct, sales: e.target.value })
                   }
-                  placeholder="Enter sales"
+                  placeholder="e.g. 4500"
                   className="form-control"
                   required
                 />
@@ -304,14 +307,14 @@ function Inventory() {
                       prodimage: e.target.value,
                     })
                   }
-                  placeholder="Enter image URL"
+                  placeholder="e.g. eat_and_sleep.jpg"
                   className="form-control"
                   required
                 />
               </FormGroup>
               <div className="text-center">
-                <Button type="submit" style={{backgroundColor: 'blue'}} className="btn btn-primary">
-                  Add Product
+                <Button type="submit" style={{fontWeight: 'bold', backgroundColor: 'blue'}} className="btn btn-primary">
+                  ADD PRODUCT
                 </Button>
               </div>
             </Form>

@@ -35,6 +35,9 @@ function Signup() {
           <div className="card" style={{ backgroundColor: "rgba(235, 235, 235, 0.8)" }}>
             <div className="card-header">
               <h2 className="text-center" style={{ fontWeight: 'bold', color: 'black' }}>SIGN UP</h2>
+              <p className="text-center py-2 mx-3">
+                Sign up today to access exclusive features, stay updated with the latest news, and connect with like-minded individuals. Creating an account is quick and easy—just fill out the form below.
+              </p>
             </div>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
@@ -141,7 +144,7 @@ function Signup() {
                     onChange={(e) => setRole(e.target.value)}
                     required
                   >
-                    <option value="">Role</option>
+                    <option value="">Select Role</option>
                     <option value="admin">Admin</option>
                     <option value="user">User</option>
                   </select>

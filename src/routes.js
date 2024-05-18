@@ -29,13 +29,13 @@ var dashRoutes = [
   //   component: <Notifications />,
   //   layout: "/admin",
   // },
-  {
-    path: "/user-page",
-    name: "Profile",
-    icon: "users_single-02",
-    component: <UserPage />,
-    layout: "/admin",
-  }
+  // {
+  //   path: "/user-page",
+  //   name: "Profile",
+  //   icon: "users_single-02",
+  //   component: <UserPage />,
+  //   layout: "/admin",
+  // }
   // {
   //   path: "/icons",
   //   name: "Icons",

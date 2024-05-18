@@ -16,7 +16,7 @@ var ps;
 
 function Admin(props) {
   const location = useLocation();
-  const [backgroundColor, setBackgroundColor] = React.useState("orange");
+  const [backgroundColor, setBackgroundColor] = React.useState("blue");
   const mainPanel = React.useRef();
   React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {

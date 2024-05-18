@@ -10,7 +10,7 @@ app.use(cors())
 
 app.use(express.json())
 
-mongoose.connect('mongodb://127.0.0.1:27017/LabananDb',{
+mongoose.connect('mongodb://127.0.0.1:27017/GaborniMongoDB',{
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -94,13 +94,18 @@ app.post('/createprod',(req, res) =>{
 })
 
 app.put('/updateprod/:id', (req, res) => {
-const id = req.params.id;
-ProdModel.findByIdAndUpdate({_id: id}, {
-  productname: req.body.productname,
-  quantity: req.body.quantity,
-  sales: req.body.sales
-}).then(user => res.json(user))
-  .catch(err => res.json(err))
+  const id = req.params.id;
+  console.log(req.body); // Log the request body to see if price is included
+  ProdModel.findByIdAndUpdate({_id: id}, {
+    productname: req.body.productname,
+    quantity: req.body.quantity,
+    sales: req.body.sales,
+    price: req.body.price
+  }).then(product => res.json(product))
+  .catch(err => {
+    console.error("Error updating product:", err);
+    res.status(500).json({ error: "Error updating product" });
+  })
 })
 
 app.delete('/deleteprod/:id', (req, res) => {
@@ -124,6 +129,50 @@ app.get('/chart-data', async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://vancarlolabanan:94n5AiiqGUtePNso@cluster0.b5ukob8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
